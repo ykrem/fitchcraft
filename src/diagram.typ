@@ -1,5 +1,5 @@
-#import "formula.typ": *
-#import "frame.typ": *
+#import "../src/formula.typ": *
+#import "../src/frame.typ": *
 
 #let indices(fms) = {
   

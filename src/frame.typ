@@ -26,7 +26,7 @@
 
 
 
-#import "formula.typ": * // constrain later
+#import "../src/formula.typ": * // constrain later
 
 // returns an array of each formula's array of frame lines and (asm) spaces
 #let frame-arr(fms) = { // parse prior?
