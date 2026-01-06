@@ -1,10 +1,10 @@
 #import "src/formula.typ": *
 #import "src/interface.typ": *
-#import "src/frameline.typ": *
+#import "src/framing.typ": *
 #import "src/chart.typ": *
 
-#let proof(frameline: frameline(), assumption-mode: "fixed", indexation: "1", proof) = {
+#let proof(framing: framing(), assumption-mode: "fixed", indexation: "1", proof-arr) = {
   
   assert(assumption-mode in assumption-modes, message: assumption-mode-error)
-  chart(frameline, assumption-mode, parse(proof, indexation))
+  chart(framing, assumption-mode, parse(proof-arr, indexation))
 }

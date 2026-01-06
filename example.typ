@@ -1,6 +1,6 @@
 #import "lib.typ": proof
 #import "src/formula.typ": start, end, assume
-#import "src/frameline.typ": frameline
+#import "src/framing.typ": framing
 
 = Examples
 
