@@ -1,11 +1,7 @@
-#import "lib.typ": *
+#import "lib.typ": * // replace with the relevant import
 
 = Examples
-
 \
-
-#let x = open
-
 #let de-morgan = [
 
 == De Morgan: $not(p and q) tack (not p or not q)$
@@ -41,12 +37,11 @@ close,
 ))
 ]
 
-
 #let ex-middle = [
 
 == Excluded Middle: $tack (p or not p)$
 Proof (`fixed` mode to `60pt`): 
-#proof(framing: 60pt, assumption-mode: "fixed", (
+#proof(assumption-mode: "fixed", (
 open,
   $not (p or not p)$,
   assume,
@@ -65,6 +60,7 @@ close,
 ))
 ]
 
+
 #let non-contra =  [
 == Non-Contradiction: $tack.r not (p and not p)$
 Proof (`fixed` mode to the default `2.25em`): 
@@ -75,7 +71,7 @@ open,
   ($p$, $and E  quad 1$),
   ($not p$, $and E  quad 2$),
   ($tack.t$, $tack.t I quad 1,2$),
- close,
+close,
 ($not (p and not p)$, $not I quad 1-4$)
 ))
 ]
@@ -94,7 +90,7 @@ open,
 
 
 
-/*
+
 #pagebreak()
 
 == Some Natural Deduction Rules
