@@ -1,42 +1,71 @@
 #import "src/formula.typ": open, close, assume
 
 #let proof(
-  framing: (height: 3em, thickness: .05em, stroke: black, assume-length: 2.25em, assume-thickness: .05em, assume-stroke: black),
-  assumption-mode: "fixed", indexation: "1", proof) = {
 
-  let framing-customizables = ("height", "thickness", "stroke", "assume-length", "assume-thickness", "assume-stroke")
-  
-  if type(framing) == length {
-    framing = (height: 3em, thickness: .05em, stroke: black, assume-length: framing, assume-thickness: .05em, assume-stroke: black)
+framing: (
+  length: 3em,
+  thickness: .05em,
+  stroke: luma(20%),
+  assume-length: 2.25em,
+  assume-thickness: .05em,
+  assume-stroke: black
+  ),
+assumption-mode: "fixed",
+indexation: "1",
+proof
+) = {
+
+let framing-customizables = ("length", "thickness", "stroke", "assume-length", "assume-thickness", "assume-stroke")
+
+let framing-default = (
+  length: 3em,
+  thickness: .05em,
+  stroke: luma(20%),
+  assume-length: 2.25em,
+  assume-thickness: .05em,
+  assume-stroke: black
+  )
+
+  for (key, value) in framing-default {
+    if key not in framing.keys() {
+      framing.insert(key, value)
+    }
   }
-  
-  else if type(framing) == dictionary {
-    assert(
-      framing.keys().all(key => key in framing-customizables),
-      message: "framing can only have " + framing-customizables.join(", ") + "."
-      )
-  }
-  else {
-    panic("framing must either be a length or a dictionary of the form (height: y, width: x)!")
-  }
-  let framing-measures = framing
 
-  import "src/framing.typ": framing
-  let framing = framing(height: framing-measures.height, assume-length: framing-measures.assume-length)
+assert(
+  framing.keys().all(key => key in framing-customizables),
+  message: "framing can only take " + framing-customizables.join(", ") + "."
+)
 
-  // 1.1
-  //let assumption-modes = ("fixed", "widest", "dynamic", "dynamic-single")
+let framing-model = framing
 
-  // 1.0
-  let assumption-modes = ("fixed", "widest", "dynamic-single")
+import "src/framing.typ": framing
 
-  let assumption-mode-error = "Invalid assumption mode! Can only be" + assumption-modes.join(" or ") + "."
-  
-  assert(assumption-mode in assumption-modes, message: assumption-mode-error)
 
-  
-  import "src/chart.typ": diagram
-  import "src/formula.typ": parse
+let framing = framing(
+  framing-model.length,
+  framing-model.thickness,
+  framing-model.stroke,
+  false, // is-short
+  false, // isassume
+  framing-model.assume-length,
+  framing-model.assume-thickness,
+  framing-model.assume-stroke
+  )
 
-  diagram(framing, assumption-mode, parse(proof, indexation))
+// 1.1
+//let assumption-modes = ("fixed", "widest", "dynamic", "dynamic-single")
+
+// 1.0
+let assumption-modes = ("fixed", "widest", "dynamic-single")
+
+let assumption-mode-error = "Invalid assumption mode! Can only be" + assumption-modes.join(" or ") + "."
+
+assert(assumption-mode in assumption-modes, message: assumption-mode-error)
+
+
+import "src/chart.typ": diagram
+import "src/formula.typ": parse
+
+diagram(framing, assumption-mode, parse(proof, indexation))
 }

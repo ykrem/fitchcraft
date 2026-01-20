@@ -134,7 +134,7 @@
 
     let new-line = grid(
       columns: row-partition,
-      rows: framing-model.height,
+      rows: framing-model.length,
       align: left+bottom,
       stroke: none,
       ..frame-row.map(row => framing-display(row)),
@@ -155,7 +155,7 @@
 
   return grid(
     columns: (widest-index, widest-line, widest-rule),
-    rows: framing-model.height,
+    rows: framing-model.length,
     align: (right+horizon, left+horizon, left+horizon),
     column-gutter: (.75em,1em), // space between index-frame, frame-rules
     stroke: none,

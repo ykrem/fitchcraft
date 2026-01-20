@@ -1,7 +1,7 @@
 // type definition
-#let framing(height: 3em, thickness: .05em, stroke: black, is-short: false, is-assume: false, assume-length: 2.25em, assume-thickness: .05em, assume-stroke: black) = {
+#let framing(length, thickness, stroke, is-short, is-assume, assume-length, assume-thickness, assume-stroke) = {
   (
-    height: height,
+    length: length,
     thick: thickness,
     stroke: stroke,
     is-short: is-short,
@@ -15,10 +15,10 @@
 // display a framing
 #let framing-display(fl) = {
 
-  let height = fl.height
-  if fl.is-short {height -= .5em}
+  let length = fl.length
+  if fl.is-short {length -= .5em}
 
-  let ln = line(angle: 90deg, length: height, stroke: fl.thick + fl.stroke)  
+  let ln = line(angle: 90deg, length: length, stroke: fl.thick + fl.stroke)  
   if fl.is-assume {
     ln = stack(dir: ttb, ln, move(
       dx: fl.thick/2,
