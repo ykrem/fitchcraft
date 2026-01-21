@@ -5,7 +5,7 @@
 framing: (
   length: 3em,
   thickness: .05em,
-  stroke: luma(20%),
+  stroke: black,
   assume-length: 2.25em,
   assume-thickness: .05em,
   assume-stroke: black
