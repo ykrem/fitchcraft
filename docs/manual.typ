@@ -5,14 +5,14 @@
 
 #align(center)[
   = Fitch
-  A Typst library for visualisation of #link("https://en.wikipedia.org/wiki/Fitch_notation")[Fitch-style] proof diagrams, with custom syntax optimized for speedy writing and conciseness.]
+  A Typst library for visualization of #link("https://en.wikipedia.org/wiki/Fitch_notation")[Fitch-style] proof diagrams, with custom syntax optimized for speedy writing and conciseness.]
 
 = Introduction
 I started writing this library after finding out plotting Fitch-style proof diagrams with existing tools was not possible, or at best unsatisfactory.
 #import "@preview/swank-tex:0.1.0": *
 As such plots were required for a course in introductory logic I was taking, I was facing a dilemma: learn #LaTeX and use its existing libraries, or write one of my own. 
 As I love Typst, I have chosen the latter course.
-This has allowed me to study some more on how visualisation works in Typst, but more importantly, make my own proof-writing syntax for, well, _speedy writing and conciseness_.
+This has allowed me to study some more on how visualization works in Typst, but more importantly, make my own proof-writing syntax for, well, _speedy writing and conciseness_.
 
 #show "Fitch": set text(style: "italic")
 
