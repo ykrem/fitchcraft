@@ -41,7 +41,8 @@ close,
 
 == Excluded Middle: $tack (p or not p)$
 Proof (`fixed` mode to `60pt`): 
-#proof(assumption-mode: "fixed", (
+#proof(assumption-mode: "fixed", framing: (assume-length: 60pt),
+(
 open,
   $not (p or not p)$,
   assume,
@@ -63,7 +64,7 @@ close,
 
 #let non-contra =  [
 == Non-Contradiction: $tack.r not (p and not p)$
-Proof (`fixed` mode to the default `2.25em`): 
+Proof (`fixed` mode to the default `2.5em`): 
 #proof((
 open,
   $(p and not p)$,

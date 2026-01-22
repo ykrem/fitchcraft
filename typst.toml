@@ -1,5 +1,5 @@
 [package]
-name = "fitch"
+name = "fitchcraft"
 version = "1.0.0"
 entrypoint = "lib.typ"
 authors = ["Yonatan Kremer"]

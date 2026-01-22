@@ -3,10 +3,10 @@
 #let proof(
 
 framing: (
-  length: 3em,
+  length: 2.5em,
   thickness: .05em,
   stroke: black,
-  assume-length: 2.25em,
+  assume-length: 2.5em,
   assume-thickness: .05em,
   assume-stroke: black
   ),
@@ -17,8 +17,8 @@ proof
 
 let framing-customizables = ("length", "thickness", "stroke", "assume-length", "assume-thickness", "assume-stroke")
 
-let framing-default = (
-  length: 3em,
+let framing-defaults = (
+  length: 2.5em,
   thickness: .05em,
   stroke: luma(20%),
   assume-length: 2.25em,
@@ -26,7 +26,7 @@ let framing-default = (
   assume-stroke: black
   )
 
-  for (key, value) in framing-default {
+  for (key, value) in framing-defaults {
     if key not in framing.keys() {
       framing.insert(key, value)
     }

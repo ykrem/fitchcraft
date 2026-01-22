@@ -1,5 +1,5 @@
-# fitch
-A Typst library for visualization of [Fitch-style](https://en.wikipedia.org/wiki/Fitch_notation) proof diagrams, with custom syntax optimized for speedy writing and conciseness.
+# fitchcraft
+Visualize [Fitch-style](https://en.wikipedia.org/wiki/Fitch_notation) proof diagrams, using custom syntax optimized for speedy writing and conciseness.
 
 While the main functionality of the library is ready, the library is still in development. See the roadmap [here](roadmap.md).
 
@@ -9,10 +9,10 @@ For more information see the [manual](docs/manual.pdf).
 ## Example
 
 ```typ
-#import "@preview/fitch:1.0.0": *
+#import "@preview/fitchcraft:1.0.0": *
 
 == Non-Contradiction: $tack.r not (p and not p)$
-Proof (`fixed` mode to the default `2.25em`): 
+Proof (`fixed` mode to the default `2.5em`): 
 #proof((
 open,
   $(p and not p)$,
@@ -27,4 +27,4 @@ close,
 
 ![example image](docs/images/non-contradiction.png)
 
-See the [examples](examples.pdf) file for more.
+See the [examples](docs/examples.pdf) file for more.
