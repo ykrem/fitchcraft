@@ -4,7 +4,7 @@
 
 #align(center)[
   = fitchcraft
-  Visualize of #link("https://en.wikipedia.org/wiki/Fitch_notation")[Fitch-style] proof diagrams, using custom syntax optimized for speedy writing and conciseness.]
+  Visualize #link("https://en.wikipedia.org/wiki/Fitch_notation")[Fitch-style] proof diagrams, using custom syntax optimized for speedy writing and conciseness.]
 
 = Introduction
 I started writing this library after finding out plotting Fitch-style proof diagrams with existing tools was not possible, or at best unsatisfactory.
