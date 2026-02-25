@@ -1,3 +1,7 @@
+- Breaking? Consider
+    - incorperate framing "thickness" into the "stroke"
+    - Replace the proof array with arguments to sink
+
 # 1.0.1: minor patch?
 - more predefined lines? contadiction, dots, etc.
     - if so, adjust the examples and readme. perhaps make it automatic.
