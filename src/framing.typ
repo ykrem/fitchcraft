@@ -12,23 +12,21 @@
   )
 }
 
-// display a framing
-#let framing-display(fl) = {
+// display a framing object
+#let framing-display(frm) = {
 
-  let length = fl.length
-  if fl.is-short {length -= .5em}
+  let length = frm.length
+  if frm.is-short {length -= .5em}
 
-  let ln = line(angle: 90deg, length: length, stroke: fl.thick + fl.stroke)  
-  if fl.is-assume {
+  let ln = line(angle: 90deg, length: length, stroke: frm.thick + frm.stroke)  
+  if frm.is-assume {
     ln = stack(dir: ttb, ln, move(
-      dx: fl.thick/2,
-      dy: -fl.assume-thick/2,
-      line(length: fl.assume-length, stroke: fl.assume-thick)
+      dx: frm.thick/2,
+      dy: -frm.assume-thick/2,
+      line(length: frm.assume-length, stroke: frm.assume-thick)
       )
     )
   }
-  
-  //ln = align(left+bottom, ln) 
-  // won't "work" for some reason
+
   return ln
 }

@@ -52,12 +52,12 @@
       }
 
       //else
-      panic("Array of invalid form! The valid forms are (equation, rule) or (index, equation, rule).")
+      panic("Array of invalid form! The valid forms are (equation,), (equation, rule) or (index, equation, rule).")
 
       }
 
     // else
-    panic("Invalid input type! Valid inputs are equations or arrays.")
+    panic("Invalid input type! Only the only valid inputs types are equations and arrays of valid form.")
 
 }
 
@@ -83,12 +83,6 @@
     }
 
   }
-
-  /* why does this exist?
-  let last = formulas.last()
-
-  assert((last not in utils) or (last == spe), message: "Can't close the proof with a utility line other than spe!")
-  */
 
   return formulas
   

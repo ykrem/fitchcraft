@@ -5,7 +5,7 @@
 #let frame-as-array(lines, framing-model) = {
 
   let frame = ()
-  let new = (framing-model,)
+  let new-line = (framing-model,)
   let is-assumption-line = (false,)
 
   for line in lines {
@@ -13,18 +13,18 @@
     if line == open {
 
       if is-assumption-line.last() {
-        let temp = framing-model // as it's not a reference but a dictionary
+        let temp = framing-model // as it's not a reference, I suppose.
         temp.insert("is-short", true)
-        new.push(temp)
+        new-line.push(temp)
         }
         
-      else {new.push(framing-model)}
+      else {new-line.push(framing-model)}
       is-assumption-line.push(false)
 
     }
 
     else if line == close {
-      let _ = new.pop()
+      let _ = new-line.pop()
       let _ = is-assumption-line.pop()
     }
 
@@ -35,8 +35,8 @@
 
     // is a visible line
     else {
-      frame.push(new)
-      new.last().insert("is-short", false)
+      frame.push(new-line)
+      new-line.last().insert("is-short", false)
     }
 
   }

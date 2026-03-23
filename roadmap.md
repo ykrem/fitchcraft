@@ -1,14 +1,13 @@
 - Breaking? Consider
-    - incorperate framing "thickness" into the "stroke"
+    - incorperate framing "thickness" (and length?) into the "stroke"
     - Replace the proof array with arguments to sink
 
 # 1.0.1: minor patch?
 - more predefined lines? contadiction, dots, etc.
-    - if so, adjust the examples and readme. perhaps make it automatic.
+    - if so, adjust the examples and readme. consider making it automatic.
 - strengthen input verification & error messages.
-- try to utilize as much built-in functions as possible.
-- documentation/readme updates?
-- make the height independent from the framing?
+- utilize as much built-in functions as possible.
+- documentation, readme updates?
 
 # 1.1: Dynamic proper and structural/meta/syntactic verification
 - clean the library, especially how the `dynamic` mode is implemented.
@@ -31,7 +30,7 @@
 - add the option to manually define asm-lines (length and/or style). can either "obey" to dynamic, ignore it, or be settable. be different to "fixed"?
 
 # Later
-- consider rewriting the line/parsing logic - the "array polymorphism" is not ideal.
+- consider rewriting the line/parsing logic - the "array polymorphism" is not ideal (breaking?).
 - "nested indexation" for subproofs?
 - consider "reomving" the redundant `math.quad`-s, or just making rule-writing easier
 - rethink how the `framing` object works. maybe use an "object library" or merge it with `formula`.
