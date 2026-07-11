@@ -2,14 +2,14 @@
     - incorperate framing "thickness" (and length?) into the "stroke"
     - Replace the proof array with arguments to sink
 
-# 1.0.1: minor patch?
+# minor update
 - more predefined lines? contadiction, dots, etc.
     - if so, adjust the examples and readme. consider making it automatic.
 - strengthen input verification & error messages.
 - utilize as much built-in functions as possible.
 - documentation, readme updates?
 
-# 1.1: Dynamic proper and structural/meta/syntactic verification
+# major update
 - clean the library, especially how the `dynamic` mode is implemented.
 - "activate" `dynamic`.
 - (related) consider "structural validation" (equal number of opennings and closings, no double xmptions, anything else?)
@@ -24,7 +24,7 @@
     - problem: implementing it means that while writing a proof, it may not render until finished.
 - note: assumptions must not have rules; everything else must have rules.
 
-# 1.2: Customization
+# Customization update
 - specialize styling for the different elements: text, equations, framings.
 - make it possible to define framings as well as anything using a closure instead of statically
 - add the option to manually define asm-lines (length and/or style). can either "obey" to dynamic, ignore it, or be settable. be different to "fixed"?
