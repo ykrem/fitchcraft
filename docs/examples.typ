@@ -1,4 +1,4 @@
-#import "@preview/fitch:1.0.0": *
+#import "@preview/fitchcraft:1.0.0": *
 
 = Examples
 \
