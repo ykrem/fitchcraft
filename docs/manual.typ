@@ -1,4 +1,4 @@
-#import "@preview/fitchcraft:1.0.0": *
+#import "@preview/fitchcraft:1.0.1": *
 #show link: it => {set text(fill: blue); underline(it)}
 #set raw(lang: "typc")
 
