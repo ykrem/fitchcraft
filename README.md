@@ -9,7 +9,7 @@ For more information see the [manual](docs/manual.pdf).
 ## Example
 
 ```typ
-#import "@preview/fitchcraft:1.0.0": *
+#import "@preview/fitchcraft:1.0.1": *
 
 == Non-Contradiction: $tack.r not (p and not p)$
 Proof (`fixed` mode to the default `2.5em`): 
