@@ -7,15 +7,13 @@
   let frame = ()
   let new-line = (framing-model,)
   let is-assumption-line = (false,)
-  let is-close-line = ()
+  let is-last-close = false
 
   for line in lines {
 
-    is-close-line.push(false)
-
     if line == open {
 
-      if is-assumption-line.last() or is-close-line.at(is-close-line.len() - 2) /* may be entered only on an 'open' line, in which case the array is already of length >2*/ {
+      if is-assumption-line.last() or is-last-close{
         let temp = framing-model // as it's not a reference, I suppose.
         temp.insert("is-short", true)
         new-line.push(temp)
@@ -43,8 +41,10 @@
       new-line.last().insert("is-short", false)
     }
 
-  }
+    is-last-close = line == close
 
+  }
+  
   return frame
 
 }
